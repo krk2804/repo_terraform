@@ -3,9 +3,9 @@ resource "google_cloudfunctions_function" "function" {
   name                = var.function
   available_memory_mb = 256
   runtime             = "python39"
-  #source_repository {
-  #  url = "https://source.cloud.google.com/moonbank-pluto/plutopubsubtobq"
-  #}
+  source_repository {
+    url = "https://source.cloud.google.com/moonbank-pluto/plutopubsubtobq"
+  }
   entry_point       = "pubsub_to_bigquery"
   timeout = 60
   event_trigger {
